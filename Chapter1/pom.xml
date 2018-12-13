@@ -18,17 +18,20 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<!--Spring默认使用JDK1.6，如果想用JDK1.8，需要在此处添加java.version-->
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 	</properties>
 
 	<dependencies>
+		<!--核心模块，包括自动配置支持、日志和YAML-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 		</dependency>
 
+		<!--测试模块，包括JUnit、Hamcrest、Mockito-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -39,6 +42,20 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+
+		<!--为了避免重复启动项目，我们可以启用热部署-->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>springloaded</artifactId>
+			<version>1.2.5.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>3.0.0</version>
+		</dependency>
+
 
 	</dependencies>
 	
